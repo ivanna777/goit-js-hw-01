@@ -1,25 +1,17 @@
 const credits = 23580;
 const pricePerDroid = 3000;
-let message = 'Отменено пользователем!';
+const input = prompt('DROID_Quantity');
+let message;
+let totalPrice;
+let amount;
 
-let quantity = prompt('Какое количество дроидов Ви желаете купить?');
-
-let totalPrice = quantity*pricePerDroid;
-
-if(quantity === null) {
-    alert (message);
+if (input === null) {
+    message = 'Отменено пользователем!';
 } else {
-    alert (totalPrice);
+    totalPrice = pricePerDroid * input;
+    amount = credits - totalPrice;
+    message = totalPrice > credits 
+    ?'Недостаточно средств на счету!' 
+    :`Вы купили ${input} дроидов, на счету осталось ${amount} кредитов.`;
 }
-
-let amount = credits - totalPrice;
-
-const message2 = totalPrice > credits 
-   ? 'Недостаточно средств на счету!'
-   :`Вы купили ${quantity} дроидов, на счету осталось ${amount} кредитов.`;
-
-if(quantity === null) {
-    alert (0);
-} else {
-    alert (message2);
-}
+alert(message);

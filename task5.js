@@ -1,28 +1,34 @@
-let deliveryCountry = prompt('Введите название страны, в которую будет осуществлена доставка').toLowerCase();
+let deliveryCountry = prompt('Delivery country').toLowerCase();
 let deliveryCost;
+const China = 'китай';
+const Chili = 'чили';
+const Australia = 'австралия';
+const India = 'индия';
+const Yamajka = 'ямайка';
 
-switch(deliveryCountry) {
-    case 'китай':
-        alert ('Доставка в Китай будет стоить 100 кредитов');
-        break;
+switch (deliveryCountry) {
+    case China:
+    deliveryCost = 100;
+    break;
 
-    case 'чили':
-        alert ('Доставка в Чили будет стоить 250 кредитов');
-        break;
+    case Chili:
+    deliveryCost = 250;
+    break;
 
-    case 'австралия':
-        alert ('Доставка в Австралию будет стоить 170 кредитов');
-        break;
+    case Australia:
+    deliveryCost = 170;
+    break;
 
-    case 'индия':
-        alert ('Доставка в Индию будет стоить 80 кредитов');
-        break;
+    case India:
+    deliveryCost = 80;
+    break;
 
-    case 'ямайка':
-        alert ('Доставка в Ямайку будет стоить 120 кредитов');
-        break;
+    case Yamajka:
+    deliveryCost = 120;
+    break;
 
     default:
         alert('В вашей стране доставка не доступна');
 }
 
+alert(`Доставка в ${deliveryCountry} будет стоить ${deliveryCost} кредитов`);
